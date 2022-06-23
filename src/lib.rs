@@ -35,114 +35,114 @@ impl Cursored {
 }
 
 impl Cursored {
-    pub fn read_slice(&mut self, len: usize) -> &[u8] {
+    pub fn get_slice(&mut self, len: usize) -> &[u8] {
         self.c.set_position(self.c.position() + len as u64);
         &self.c.get_ref()[self.c.position() as usize - len..self.c.position() as usize]
     }
 
-    pub fn read_u8(&mut self) -> u8 {
+    pub fn get_u8(&mut self) -> u8 {
         let mut buf = [0];
         self.c.read_exact(&mut buf).expect("Exhausted");
         buf[0]
     }
 
-    pub fn read_i8(&mut self) -> i8 {
+    pub fn get_i8(&mut self) -> i8 {
         let mut buf = [0];
         self.c.read_exact(&mut buf).expect("Exhausted");
         buf[0] as i8
     }
 
-    pub fn read_u16(&mut self) -> u16 {
+    pub fn get_u16(&mut self) -> u16 {
         let mut buf = [0; 2];
         self.c.read_exact(&mut buf).expect("Exhausted");
         u16::from_be_bytes(buf)
     }
 
-    pub fn read_u16_le(&mut self) -> u16 {
+    pub fn get_u16_le(&mut self) -> u16 {
         let mut buf = [0; 2];
         self.c.read_exact(&mut buf).expect("Exhausted");
         u16::from_le_bytes(buf)
     }
 
-    pub fn read_i16(&mut self) -> i16 {
+    pub fn get_i16(&mut self) -> i16 {
         let mut buf = [0; 2];
         self.c.read_exact(&mut buf).expect("Exhausted");
         i16::from_be_bytes(buf)
     }
 
-    pub fn read_i16_le(&mut self) -> i16 {
+    pub fn get_i16_le(&mut self) -> i16 {
         let mut buf = [0; 2];
         self.c.read_exact(&mut buf).expect("Exhausted");
         i16::from_le_bytes(buf)
     }
 
-    pub fn read_u32(&mut self) -> u32 {
+    pub fn get_u32(&mut self) -> u32 {
         let mut buf = [0; 4];
         self.c.read_exact(&mut buf).expect("Exhausted");
         u32::from_be_bytes(buf)
     }
 
-    pub fn read_u32_le(&mut self) -> u32 {
+    pub fn get_u32_le(&mut self) -> u32 {
         let mut buf = [0; 4];
         self.c.read_exact(&mut buf).expect("Exhausted");
         u32::from_le_bytes(buf)
     }
 
-    pub fn read_i32(&mut self) -> i32 {
+    pub fn get_i32(&mut self) -> i32 {
         let mut buf = [0; 4];
         self.c.read_exact(&mut buf).expect("Exhausted");
         i32::from_be_bytes(buf)
     }
 
-    pub fn read_i32_le(&mut self) -> i32 {
+    pub fn get_i32_le(&mut self) -> i32 {
         let mut buf = [0; 4];
         self.c.read_exact(&mut buf).expect("Exhausted");
         i32::from_le_bytes(buf)
     }
 
-    pub fn read_u64(&mut self) -> u64 {
+    pub fn get_u64(&mut self) -> u64 {
         let mut buf = [0; 8];
         self.c.read_exact(&mut buf).expect("Exhausted");
         u64::from_be_bytes(buf)
     }
 
-    pub fn read_u64_le(&mut self) -> u64 {
+    pub fn get_u64_le(&mut self) -> u64 {
         let mut buf = [0; 8];
         self.c.read_exact(&mut buf).expect("Exhausted");
         u64::from_le_bytes(buf)
     }
 
-    pub fn read_i64(&mut self) -> i64 {
+    pub fn get_i64(&mut self) -> i64 {
         let mut buf = [0; 8];
         self.c.read_exact(&mut buf).expect("Exhausted");
         i64::from_be_bytes(buf)
     }
 
-    pub fn read_i64_le(&mut self) -> i64 {
+    pub fn get_i64_le(&mut self) -> i64 {
         let mut buf = [0; 8];
         self.c.read_exact(&mut buf).expect("Exhausted");
         i64::from_le_bytes(buf)
     }
 
-    pub fn read_u128(&mut self) -> u128 {
+    pub fn get_u128(&mut self) -> u128 {
         let mut buf = [0; 16];
         self.c.read_exact(&mut buf).expect("Exhausted");
         u128::from_be_bytes(buf)
     }
 
-    pub fn read_u128_le(&mut self) -> u128 {
+    pub fn get_u128_le(&mut self) -> u128 {
         let mut buf = [0; 16];
         self.c.read_exact(&mut buf).expect("Exhausted");
         u128::from_le_bytes(buf)
     }
 
-    pub fn read_i128(&mut self) -> i128 {
+    pub fn get_i128(&mut self) -> i128 {
         let mut buf = [0; 16];
         self.c.read_exact(&mut buf).expect("Exhausted");
         i128::from_be_bytes(buf)
     }
 
-    pub fn read_i128_le(&mut self) -> i128 {
+    pub fn get_i128_le(&mut self) -> i128 {
         let mut buf = [0; 16];
         self.c.read_exact(&mut buf).expect("Exhausted");
         i128::from_le_bytes(buf)
